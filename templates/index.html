@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p class="h2 text-center">Оформление каюты</p>
+<table class="table text-center">
+    <tr class="table-secondary">
+        <td>Цвет стен</td>
+        <td>Эмблема</td>
+    </tr>
+    <tr>
+        <td>
+        {% if sex == "male" %}
+            {% if age < 21 %}
+                <img src="/static/img/young_male.jpg" alt="Фото не загрузилось" width="400px">
+            {% else %}
+                <img src="/static/img/old_male.jpg" alt="Фото не загрузилось" width="400px">
+            {% endif %}
+        {% else %}
+            {% if age < 21 %}
+                <img src="/static/img/young_female.jpg" alt="Фото не загрузилось" width="400px">
+            {% else %}
+                <img src="/static/img/old_female.jpg" alt="Фото не загрузилось" width="400px">
+            {% endif %}
+        {% endif %}
+        </td>
+        <td>
+        {% if age < 21 %}
+            <img src="/static/img/photo1.jpeg" alt="Фото не загрузилось" width="400px">
+        {% else %}
+            <img src="/static/img/photo2.jpg" alt="Фото не загрузилось" width="400px">
+        {% endif %}
+        </td>
+    </tr>
+</table>
+{% endblock %}
